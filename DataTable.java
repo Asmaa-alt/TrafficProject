@@ -1,0 +1,225 @@
+package softwaregroupproject;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author taniy
+ */
+public class DataTable {
+    private static Connection connection = Database.getConnection();
+
+    public static void Insert(int count_point_id, String direction, int year, String count_date, int hour, int region_id, 
+            String region_name, int local_authority_id, String local_authority_name, String road_name, String road_type, 
+            String start_junction_road_name, String end_junction_road_name, int easting, int northing, String latitude, 
+            String longitude, String link_length_km, String link_length_miles , int pedal_cycles, int two_wheeled_vehicles, 
+            int cars_and_taxis, int buses_and_coaches, int lgvs, int hgvs_2_rigid_axle,  int hvgs_3_ridgid_axle, 
+            int hgvs_4_or_more_rigid_axle, int hgvs_3_or_4_articulated_axle, int hgvs_5_articulated_axle, 
+            int hgvs_6_articulated_axle , int all_hgvs, int all_motor_vehicles) {
+        
+        String sql = ("INSERT INTO Database ( count_point_id, direction ,year , count_date, hour, region_id, region_name, local_authority_id,local_authority_name, "
+                + "road_name, road_type, start_junction_road_name, end_junction_road_name, easting, northing, latitude, longitude,link_length_km , link_length_miles,pedal_cycles ,"
+                + "two_wheeled_vehicles, cars_and_taxis ,buses_and_coaches , lgvs, hgvs_2_rigid_axle, hvgs_3_ridgid_axle, hgvs_4_or_more_rigid_axle, hgvs_3_or_4_articulated_axle, "
+                + "hgvs_5_articulated_axle, hgvs_6_articulated_axle, all_hgvs, all_motor_vehicles) VALUES"
+                + "("
+                + "'" + count_point_id + "',"
+                + "'" + direction + "',"
+                + "'" + year + "',"
+                + "'" + count_date + "',"
+                + "'" + hour + "',"
+                + "'" + region_id + "'," 
+                + "'" + region_name + "',"
+                + "'" + local_authority_id + "'," 
+                + "'" + local_authority_name + "'," 
+                + "'" + road_name + "'," 
+                + "'" + road_type + "'," 
+                + "'" + start_junction_road_name + "'," 
+                + "'" + end_junction_road_name + "'," 
+                + "'" + easting + "'," 
+                + "'" + northing + "'," 
+                + "'" + latitude + "'," 
+                + "'" + longitude + "'," 
+                + "'" + link_length_km + "'," 
+                + "'" + link_length_miles + "'," 
+                + "'" + pedal_cycles + "',"
+                + "'" + two_wheeled_vehicles + "',"
+                + "'" + cars_and_taxis + "',"
+                + "'" + buses_and_coaches + "',"
+                + "'" + lgvs + "',"
+                + "'" + hgvs_2_rigid_axle + "'," 
+                + "'" + hvgs_3_ridgid_axle + "'," 
+                + "'" + hgvs_4_or_more_rigid_axle + "'," 
+                + "'" + hgvs_3_or_4_articulated_axle + "'," 
+                + "'" + hgvs_5_articulated_axle + "'," 
+                + "'" + hgvs_6_articulated_axle + "'," 
+                + "'" + all_hgvs + "',"
+                + "'" + all_motor_vehicles + "' " 
+                + ")");
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
+            System.out.println("Data " + region_name + " region_name is inserted ");
+        } catch (SQLException e) {
+            System.out.println("Error occurred when inserting into the Data table " + e.getMessage());
+
+        }
+
+    }
+
+    public static void batchInsert(ArrayList<String> input)
+    {
+        for (String currentLine : input)
+        {       
+
+          String[] lineArray = currentLine.split(",");
+          int count_point_id = Integer.parseInt(lineArray[0]);
+          String direction = (lineArray[1]);
+          int year = Integer.parseInt(lineArray[2]);
+          String count_date = (lineArray[3]);
+          int hour = Integer.parseInt(lineArray[4]);
+          int region_id = Integer.parseInt(lineArray[5]);
+          String region_name = (lineArray[6]);
+          int local_authority_id = Integer.parseInt(lineArray[7]);
+          String local_authority_name = (lineArray[8]);
+          String road_name = (lineArray[9]);
+          String road_type = (lineArray[10]);
+          String start_junction_road_name = (lineArray[11]);
+          String end_junction_road_name = (lineArray[12]);
+          int easting = Integer.parseInt(lineArray[13]);
+          int northing = Integer.parseInt(lineArray[14]);
+          String latitude = (lineArray[15]);
+          String longitude = (lineArray[16]);
+          String link_length_km = (lineArray[17]);
+          String link_length_miles =(lineArray[18]);
+          int pedal_cycles = Integer.parseInt(lineArray[19]);
+          int two_wheeled_vehicles = Integer.parseInt(lineArray[20]);
+          int cars_and_taxis= Integer.parseInt(lineArray[21]);
+          int buses_and_coaches = Integer.parseInt(lineArray[22]);
+          int lgvs = Integer.parseInt(lineArray[23]);
+          int hgvs_2_rigid_axle = Integer.parseInt(lineArray[24]);
+          int hvgs_3_ridgid_axle = Integer.parseInt(lineArray[25]);
+          int hgvs_4_or_more_rigid_axle = Integer.parseInt(lineArray[26]);
+          int hgvs_3_or_4_articulated_axle = Integer.parseInt(lineArray[27]);
+          int hgvs_5_articulated_axle = Integer.parseInt(lineArray[28]);
+          int hgvs_6_articulated_axle = Integer.parseInt(lineArray[29]);
+          int all_hgvs = Integer.parseInt(lineArray[30]);
+          int all_motor_vehicles = Integer.parseInt(lineArray[31]);
+          
+        
+          Insert(count_point_id, direction, year, count_date, hour, region_id, region_name, local_authority_id, local_authority_name, road_name, road_type, start_junction_road_name, 
+                  end_junction_road_name, easting, northing, latitude, longitude, link_length_km, link_length_miles ,pedal_cycles, two_wheeled_vehicles, cars_and_taxis, buses_and_coaches, 
+                  lgvs, hgvs_2_rigid_axle, hvgs_3_ridgid_axle, hgvs_4_or_more_rigid_axle, hgvs_3_or_4_articulated_axle, hgvs_5_articulated_axle, hgvs_6_articulated_axle , all_hgvs, all_motor_vehicles);
+        
+        }    
+    
+    
+    }    
+    
+    
+    
+    
+    public static ResultSet Get(int year, int pedal_cycles, int two_wheeled_vehicles, int cars_and_taxis, 
+            int buses_and_coaches, int lgvs, int all_hgvs) {
+        
+        String sql = "SELECT * FROM Database WHERE year = " + year;
+
+        ResultSet result = null;
+        try {
+            Statement statement = connection.createStatement();
+            result = statement.executeQuery(sql);
+            if (result.next()) {
+                System.out.println("Data Table: " + result.getInt("year") + " year is retrieved");
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error occurred when reading the Data table" + e.getMessage());
+        } finally {
+            return result;
+        }
+    }
+
+    public static void Update(int count_point_id, String direction, int year, String count_date, int hour, int region_id, 
+            String region_name, int local_authority_id, String local_authority_name, String road_name, String road_type, 
+            String start_junction_road_name, String end_junction_road_name, int easting, int northing, String latitude, 
+            String longitude, String link_length_km, String link_length_miles , int pedal_cycles, int two_wheeled_vehicles, 
+            int cars_and_taxis, int buses_and_coaches, int lgvs, int hgvs_2_rigid_axle,  int hvgs_3_ridgid_axle, 
+            int hgvs_4_or_more_rigid_axle, int hgvs_3_or_4_articulated_axle, int hgvs_5_articulated_axle, 
+            int hgvs_6_articulated_axle , int all_hgvs, int all_motor_vehicles) {
+        
+        String sql = ("UPDATE Database SET year = '" + year
+                + "', count_point_id = '" + count_point_id
+                + "', direction = '" + direction
+                + "', count_date = '" + count_date
+                + "', hour = '" + hour
+                + "', region_id = '" + region_id
+                + "', region_name = '" + region_name
+                + "', start_junction_road_name = '" + start_junction_road_name
+                + "', end_junction_road_name = '" + end_junction_road_name
+                + "', easting = '" + easting
+                + "', northing = '" + northing
+                + "', latitude = '" + latitude
+                + "', longitude = '" + longitude
+                + "', link_length_km = '" + link_length_km
+                + "', link_length_miles = '" + link_length_miles
+                + "', pedal_cycles = '" + pedal_cycles
+                + "', two_wheeled_vehicles = '" + two_wheeled_vehicles
+                + "', cars_and_taxis = '" + cars_and_taxis
+                + "', buses_and_coaches = '" + buses_and_coaches
+                + "', lgvs = '" + lgvs         
+                + "', hgvs_2_rigid_axle = '" + hgvs_2_rigid_axle
+                + "', hvgs_3_ridgid_axle = '" + hvgs_3_ridgid_axle
+                + "', hgvs_4_or_more_rigid_axle = '" + hgvs_4_or_more_rigid_axle
+                + "', hgvs_3_or_4_articulated_axle = '" + hgvs_3_or_4_articulated_axle
+                + "', hgvs_5_articulated_axle = '" + hgvs_5_articulated_axle
+                + "', hgvs_6_articulated_axle = '" + hgvs_6_articulated_axle
+                + "', all_hgvs = '" + all_hgvs
+                + "', all_motor_vehicles = '" + all_motor_vehicles
+                + "' WHERE year = " + year);
+
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
+            System.out.println("Data for " + year + " year is updated ");
+        } catch (SQLException e) {
+            System.out.println("Error occurred when updating the Data table " + e.getMessage());
+        }
+
+    }
+     public static void Delete(int year, int pedal_cycles, int two_wheeled_vehicles, int cars_and_taxis, int buses_and_coaches, int lgvs, int all_hgvs) {
+        
+        String sql = ("DELETE FROM Database WHERE year = " + year);
+                
+
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
+            System.out.println("Data Table with year " + year + " year is deleted ");
+        } catch (SQLException e) {
+            System.out.println("Error occurred when deleting from the Data table " + e.getMessage());
+        }
+
+    }
+}
+
+
+
+/**
+ * * public static void batchInsert(ArrayList<String> input) { for (String
+ * currentLine : input) { String[] lineArray = currentLine.split(","); int year
+ * = Integer.parseInt(lineArray[0]); int pedal_cycles =
+ * Integer.parseInt(lineArray[1]); int two_wheeled_vehicles =
+ * Integer.parseInt(lineArray[2]); int cars_and_taxis =
+ * Integer.parseInt(lineArray[3]); int bus_and_coaches =
+ * Integer.parseInt(lineArray[4]); int lgvs = Integer.parseInt(lineArray[5]);
+ * int all_hgvs = Integer.parseInt(lineArray[6]); int id =
+ * Integer.parseInt(lineArray[7]);
+ *
+ * Insert(year, pedal_cycles, two_wheeled_vehicles, cars_and_taxis,
+ * bus_and_coaches, lgvs, all_hgvs, id); }
+    }*
+ */
