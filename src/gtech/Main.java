@@ -18,14 +18,12 @@ public class Main {
     //    DB.getConnection();
       
     
-    login l = new login(); 
-    l.setVisible(true);
     
     
     
     
     
-    Tables.CreateUser();
+   
     }
     
 }

@@ -12,8 +12,6 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -22,15 +20,16 @@ import java.util.logging.Logger;
 public class UserTable {
     
     
-    public static void insert(String UserName, String UserEmail,String UserPassword) 
+    public static void insert(String UserName, String UserEmail,String UserType,String UserPassword) 
     {
         
         Connection connection = DB.getConnection();
         
-        String sql = "INSERT INTO  User( UserName, UserEmail,UserPassword ) VALUES"
+        String sql = "INSERT INTO  User( UserName, UserEmail, UserType,UserPassword ) VALUES"
                 + "("
                     + "'" + UserName   + "',"
                     + "'"+ UserEmail  + "',"  
+                    + "'"+ UserType  + "',"  
                     + "'"+ UserPassword  + "'"  
                 + ")" ;
         
@@ -49,6 +48,40 @@ public class UserTable {
         }
       
     }
+    
+    
+      
+    public static void insertSalt(String UserName, String UserEmail,String UserType,String UserMemorable,String UserPassword,String salt) 
+    {
+        
+        Connection connection = DB.getConnection();
+        
+        String sql = "INSERT INTO  User( UserName, UserEmail, UserType, UserMemorable, UserPassword, salt ) VALUES"
+                + "("
+                    + "'" + UserName   + "',"
+                    + "'"+ UserEmail  + "',"  
+                    + "'"+ UserType  + "',"  
+                    + "'"+ UserMemorable  + "',"  
+                    + "'"+ UserPassword  + "',"  
+                    + "'"+ salt  + "'"  
+                + ")" ;
+        
+        try 
+        {
+            Statement  statement =  connection.createStatement();
+            statement.executeUpdate(sql);
+             System.out.println(" User" +  " " + UserName + " " + "inserted" );
+             connection.close();
+         } 
+        
+        catch (SQLException ex) 
+        {
+        System.out.println("Error while inserting UserTable" + ex.getMessage());
+            
+        }
+      
+    }
+    
     
     
     
@@ -284,10 +317,10 @@ public class UserTable {
     
     
     
-    public static ResultSet getUser(String UserEmail, String UserPassword) { 
+    public static ResultSet GetUserEmailPassword(String UserEmail, String UserPassword) { 
         
         
-          Connection connection = DB.getConnection();
+        Connection connection = DB.getConnection();
         
         String sql = "SELECT   UserEmail,UserPassword  from User where UserEmail =  '" + UserEmail + "' and UserPassword =   '" + UserPassword + "'";
         ResultSet result = null; 
@@ -309,7 +342,7 @@ public class UserTable {
     }
     
     
-    public static ResultSet getUserT(String UserName,String UserEmail, String UserPassword) { 
+    public static ResultSet GetUserNameEmailPassword(String UserName,String UserEmail, String UserPassword) { 
         Connection connection = DB.getConnection();
     
     // Connection connection = DB.getConnection();
@@ -335,10 +368,66 @@ public class UserTable {
         }
     }
     
+    /**
+     *
+     * @param UserEmail
+     * @param UserPassword
+     * @return
+     */
+    public static ResultSet GetUserEEmailPassword(String UserEmail, String UserPassword) { 
+        
+        
+        Connection connection = DB.getConnection();
+        
+        String sql = "SELECT   UserEmail,UserPassword  from User where UserEmail = '" + UserEmail + "' and UserPassword ='" + UserPassword + "'";
+        ResultSet result = null; 
+       
+        try 
+        {
+            Statement  statement =  connection.createStatement();
+            result=statement.executeQuery(sql);
+            connection.close();
+      
+        
+    }   catch (SQLException ex) {
+        System.out.println("Error while getting from User Table" + ex.getMessage());
+        }
+        
+        finally {
+        return result;
+        }
+    }
+    
+    
+    public static ResultSet GetUserNameEmailPasswordSalt(String UserEmail, String UserPassword,String salt) { 
+        Connection connection = DB.getConnection();
+    
+    // Connection connection = DB.getConnection();
+    
+        String sql = "SELECT   UserEmail,UserPassword  from User where  UserEmail =  '" + UserEmail + "' and UserPassword = '" + UserPassword +"' and salt = '" + salt + "'";
+        ResultSet result = null; 
+       
+        try 
+        {
+            
+            Statement  statement;
+            statement = connection.createStatement();
+            result=statement.executeQuery(sql);
+            connection.close();
+      
+        
+    }   catch (SQLException ex) {
+        System.out.println("Error while getting from User Table" + ex.getMessage());
+        }
+        
+        finally {
+        return result;
+        }
+    }
     
     
     
-    public static ResultSet getA(String UserEmail) { 
+    public static ResultSet GetUserEmail(String UserEmail) { 
         
         Connection connection = DB.getConnection();
         
@@ -364,7 +453,60 @@ public class UserTable {
     
     
     
-    public static ResultSet getUser(String UserEmail) { 
+        public static ResultSet GetUserPassword(String UserPassword) { 
+        
+        Connection connection = DB.getConnection();
+        
+        String sql = "SELECT  * FROM User WHERE UserPassword = '" + UserPassword + "'";
+        ResultSet result = null; 
+       
+        try 
+        {
+            Statement  statement =  connection.createStatement();
+            result=statement.executeQuery(sql);
+            connection.close();
+      
+        
+    }   catch (SQLException ex) {
+        System.out.println("Error while getting from User Table" + ex.getMessage());
+        }
+        
+        finally {
+        return result;
+        }
+   
+}
+    
+        
+        public static ResultSet GetSalt(String salt) { 
+        
+        Connection connection = DB.getConnection();
+        
+        String sql = "SELECT  * FROM User WHERE salt = '" + salt + "'";
+        ResultSet result = null; 
+       
+        try 
+        {
+            Statement  statement =  connection.createStatement();
+            result=statement.executeQuery(sql);
+            connection.close();
+      
+        
+    }   catch (SQLException ex) {
+        System.out.println("Error while getting from User Table" + ex.getMessage());
+        }
+        
+        finally {
+        return result;
+        }
+   
+}
+    
+    
+    
+    
+    
+    public static ResultSet SetUserEmail(String UserEmail) { 
         
         
           Connection connection = DB.getConnection();
@@ -392,29 +534,7 @@ public class UserTable {
     
     
     
-    /*  public static ResultSet getUser(String UserEmail, LocalDate DateJoined,int ID) { 
-        
-        
-          Connection connection = DB.getConnection();
-        
-        String sql = "SELECT   UserEmail,UserPassword  from User where UserEmail =  '" + UserEmail + "' and DateJoined =   '" + DateJoined+ "'" + "' and ID =   '" + ID+ "'";
-        ResultSet result = null; 
-       
-        try 
-        {
-            Statement  statement =  connection.createStatement();
-            result=statement.executeQuery(sql);
-            connection.close();
-      
-        
-    }   catch (SQLException ex) {
-        System.out.println("Error while getting from User Table" + ex.getMessage());
-        }
-        
-        finally {
-        return result;
-        }
-    } */ 
+    
     
 
 }
