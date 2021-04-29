@@ -543,7 +543,7 @@ public class Adminpanel1 extends javax.swing.JFrame {
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         // TODO add your handling code here:
         
-          DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
+        /*  DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
           if(jTable1.getSelectedRowCount()==1){
               //if single row is selected then delete
               tm.removeRow(jTable1.getSelectedRow());
@@ -557,6 +557,46 @@ public class Adminpanel1 extends javax.swing.JFrame {
               }
               
           }
+        
+        */
+        
+        
+        
+        try {
+            
+            Connection cn =  DriverManager.getConnection("jdbc:sqlite:GtechUser.db");
+           // Connection cn = null;
+           // PreparedStatement st = null;
+            ResultSet rs = null;
+            
+            String sql = ("DELETE FROM UserActivity where ID=?");
+                    
+         PreparedStatement  st = cn.prepareStatement(sql);
+            st.setString(1, name.getText());
+            st.setString(2, email.getText());
+            st.setString(3, id.getText());
+            st.setString(4, date.getText());
+            
+              st.setString(5, login.getText());
+              st.setString(6, logout.getText());
+              
+              st.executeUpdate();
+              JOptionPane.showMessageDialog(this,"insertion successfull");
+              cn.close();
+              
+            
+            
+        } catch (SQLException ex) {
+           // Logger.getLogger(Adminpanel1.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(this,ex);
+             
+             
+        }
+        
+    showTable();
+         
+        
+        
     }//GEN-LAST:event_DeleteActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed

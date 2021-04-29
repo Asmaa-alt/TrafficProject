@@ -146,14 +146,66 @@ public class UserTable {
           
           
       }
-    
        
-        public static void insertUserSignUppActivity(String UserEmail, LocalDate DateJoined,int ID) {
+         public static void insertUserLogin(String loginTime) {
           
           Connection connection = DB.getConnection();
         
-        String sql = "INSERT INTO  UserActivity( UserEmail, DateJoined,ID ) VALUES"
+        String sql = "INSERT INTO  UserActivity(loginTime ) VALUES"
                 + "("
+                     + "'"+  loginTime  + "'" 
+                + ")" ;
+        
+        try 
+        {
+            Statement  statement =  connection.createStatement();
+            statement.executeUpdate(sql);
+             System.out.println(" User" +  "Joined IN AT " + loginTime  + " " + "" );
+             connection.close();
+         } 
+        
+        catch (SQLException ex) 
+        {
+        System.out.println("Error while inserting UserTable" + ex.getMessage());
+            
+        } 
+        
+          
+          
+          
+      }
+         
+         
+         
+           public static void insertULogin(String Email,String loginTime) {
+          
+          Connection connection = DB.getConnection();
+        
+        String sql = "update UserActivity set loginTime = ? where UserEmail = '" + Email + "'";
+        
+        try 
+        {
+            Statement  statement =  connection.createStatement();
+            statement.executeUpdate(sql);
+             System.out.println(" User" +  "Joined IN AT " + loginTime  + " " + "" );
+             connection.close();
+         } 
+        
+        catch (SQLException ex) 
+        {
+        System.out.println("Error while inserting UserTable" + ex.getMessage());
+            
+        } 
+        }
+    
+       
+        public static void insertUserSignUppActivity(String UserName,String UserEmail, LocalDate DateJoined,int ID) {
+          
+          Connection connection = DB.getConnection();
+        
+        String sql = "INSERT INTO  UserActivity( UserName,UserEmail, DateJoined,ID ) VALUES"
+                + "("
+                    + "'" + UserName  + "',"
                     + "'" + UserEmail  + "',"
                     + "'" + DateJoined  + "',"
                      + "'"+  ID  + "'" 
@@ -316,13 +368,11 @@ public class UserTable {
 }
     
     
-    
-    public static ResultSet GetUserEmailPassword(String UserEmail, String UserPassword) { 
-        
+        public static ResultSet getloginemail(String UserEmail) { 
         
         Connection connection = DB.getConnection();
         
-        String sql = "SELECT   UserEmail,UserPassword  from User where UserEmail =  '" + UserEmail + "' and UserPassword =   '" + UserPassword + "'";
+        String sql = "SELECT  * FROM UserActivity WHERE UserEmail = '" + UserEmail + "'";
         ResultSet result = null; 
        
         try 
@@ -339,41 +389,14 @@ public class UserTable {
         finally {
         return result;
         }
-    }
+   
+}
     
     
-    public static ResultSet GetUserNameEmailPassword(String UserName,String UserEmail, String UserPassword) { 
-        Connection connection = DB.getConnection();
+
     
-    // Connection connection = DB.getConnection();
     
-        String sql = "SELECT   UserEmail,UserPassword  from User where  UserName =  '" + UserName + "' and UserEmail = '" + UserEmail +"' and UserPassword = '" + UserPassword + "'";
-        ResultSet result = null; 
-       
-        try 
-        {
-            
-            Statement  statement;
-            statement = connection.createStatement();
-            result=statement.executeQuery(sql);
-            connection.close();
-      
-        
-    }   catch (SQLException ex) {
-        System.out.println("Error while getting from User Table" + ex.getMessage());
-        }
-        
-        finally {
-        return result;
-        }
-    }
     
-    /**
-     *
-     * @param UserEmail
-     * @param UserPassword
-     * @return
-     */
     public static ResultSet GetUserEEmailPassword(String UserEmail, String UserPassword) { 
         
         
@@ -427,16 +450,19 @@ public class UserTable {
     
     
     
-    public static ResultSet GetUserEmail(String UserEmail) { 
-        
+  public static ResultSet GetEID(String UserEmail, int ID,String Date,String login) { 
         Connection connection = DB.getConnection();
-        
-        String sql = "SELECT  * FROM User WHERE UserEmail = '" + UserEmail + "'";
+    
+    // Connection connection = DB.getConnection();
+    
+        String sql = "SELECT   UserEmail,ID,DateJoined,loginTime  from UserActivity where  UserEmail =  '" + UserEmail + "' and ID = '" + ID +"' and DateJoined = '" + Date +"' and  loginTime = '" + login + "'";
         ResultSet result = null; 
        
         try 
         {
-            Statement  statement =  connection.createStatement();
+            
+            Statement  statement;
+            statement = connection.createStatement();
             result=statement.executeQuery(sql);
             connection.close();
       
@@ -448,34 +474,8 @@ public class UserTable {
         finally {
         return result;
         }
-   
-}
+    }
     
-    
-    
-        public static ResultSet GetUserPassword(String UserPassword) { 
-        
-        Connection connection = DB.getConnection();
-        
-        String sql = "SELECT  * FROM User WHERE UserPassword = '" + UserPassword + "'";
-        ResultSet result = null; 
-       
-        try 
-        {
-            Statement  statement =  connection.createStatement();
-            result=statement.executeQuery(sql);
-            connection.close();
-      
-        
-    }   catch (SQLException ex) {
-        System.out.println("Error while getting from User Table" + ex.getMessage());
-        }
-        
-        finally {
-        return result;
-        }
-   
-}
     
         
         public static ResultSet GetSalt(String salt) { 
@@ -501,8 +501,7 @@ public class UserTable {
         }
    
 }
-    
-    
+        
     
     
     
@@ -511,7 +510,7 @@ public class UserTable {
         
           Connection connection = DB.getConnection();
         
-        String sql = "SELECT   UserEmail from UserActivity where UserEmail =  '" + UserEmail + "'";
+        String sql = "SELECT UserEmail from UserActivity where UserEmail =  '" + UserEmail + "'";
         ResultSet result = null; 
        
         try 

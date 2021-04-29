@@ -42,15 +42,11 @@ import javax.swing.JFrame;
  * @author asma.
  */
 public class SignUpIn extends javax.swing.JFrame {
-
-    
-    
-    /**
+ /**
      * Creates new form SignUpIn
      */
     
-     public String salt; 
-    
+     public String salt;
      //generated
      public String mySecurePassword;
      //
@@ -58,24 +54,16 @@ public class SignUpIn extends javax.swing.JFrame {
      public String by;
      
     public SignUpIn() {
-        
-        
-        
+    
         this.salt = SignUpIn.getSalt(30);
-        //  SignUpIn n = new SignUpIn();
-        
-     //   this.mySecurePassword = SignUpIn.generateSecurePassword(plo, salt);
         initComponents();
-        ///PaswordLogin
+     
     }
 
     
       public JTextField getEmail() {
-       return EmailL; 
+       return EmailLTextField; 
     }
-      
-      
-      
      
     public String getEmailL() {
        return s; 
@@ -88,10 +76,6 @@ public class SignUpIn extends javax.swing.JFrame {
     int randomID = (int)Math.floor(Math.random()*(max-min+1)+min);
     LocalTime logInTime = LocalTime.now();
     
-    
-    
-    
-   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,26 +88,24 @@ public class SignUpIn extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         SignupPanel = new javax.swing.JPanel();
         UserN = new javax.swing.JLabel();
-        UserName = new javax.swing.JTextField();
+        UserNameTextField = new javax.swing.JTextField();
         UEmail = new javax.swing.JLabel();
-        UserEmail = new javax.swing.JTextField();
+        EmailSTextField = new javax.swing.JTextField();
         UPassword = new javax.swing.JLabel();
-        UserPassword = new javax.swing.JPasswordField();
+        PasswordSTextField = new javax.swing.JPasswordField();
         MemorableW = new javax.swing.JLabel();
-        MemorableWord = new javax.swing.JTextField();
-        SignUp = new javax.swing.JButton();
+        MemorableWordTextField = new javax.swing.JTextField();
+        SignUpButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         Clear = new javax.swing.JButton();
         user = new javax.swing.JLabel();
         usertype = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
         SigninPanel = new javax.swing.JPanel();
         EmailLogi = new javax.swing.JLabel();
-        EmailL = new javax.swing.JTextField();
+        EmailLTextField = new javax.swing.JTextField();
         PasswordLogi = new javax.swing.JLabel();
-        PaswordLogin = new javax.swing.JPasswordField();
-        Login = new javax.swing.JButton();
+        PaswordLoginTextField = new javax.swing.JPasswordField();
+        LoginButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         ForgotPass = new javax.swing.JButton();
         ClearLogin = new javax.swing.JButton();
@@ -139,50 +121,50 @@ public class SignUpIn extends javax.swing.JFrame {
 
         UserN.setText("Username");
 
-        UserName.setBackground(new java.awt.Color(247, 247, 247));
-        UserName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        UserName.addActionListener(new java.awt.event.ActionListener() {
+        UserNameTextField.setBackground(new java.awt.Color(247, 247, 247));
+        UserNameTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        UserNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserNameActionPerformed(evt);
+                UserNameTextFieldActionPerformed(evt);
             }
         });
 
         UEmail.setText("Email");
 
-        UserEmail.setBackground(new java.awt.Color(247, 247, 247));
-        UserEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        UserEmail.addActionListener(new java.awt.event.ActionListener() {
+        EmailSTextField.setBackground(new java.awt.Color(247, 247, 247));
+        EmailSTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        EmailSTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserEmailActionPerformed(evt);
+                EmailSTextFieldActionPerformed(evt);
             }
         });
 
         UPassword.setText("Password");
 
-        UserPassword.setBackground(new java.awt.Color(247, 247, 247));
-        UserPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        UserPassword.addActionListener(new java.awt.event.ActionListener() {
+        PasswordSTextField.setBackground(new java.awt.Color(247, 247, 247));
+        PasswordSTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        PasswordSTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserPasswordActionPerformed(evt);
+                PasswordSTextFieldActionPerformed(evt);
             }
         });
 
         MemorableW.setText("Memorable Word");
 
-        MemorableWord.setBackground(new java.awt.Color(247, 247, 247));
-        MemorableWord.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        MemorableWord.addActionListener(new java.awt.event.ActionListener() {
+        MemorableWordTextField.setBackground(new java.awt.Color(247, 247, 247));
+        MemorableWordTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        MemorableWordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MemorableWordActionPerformed(evt);
+                MemorableWordTextFieldActionPerformed(evt);
             }
         });
 
-        SignUp.setBackground(new java.awt.Color(0, 153, 255));
-        SignUp.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        SignUp.setText("Sign Up");
-        SignUp.addActionListener(new java.awt.event.ActionListener() {
+        SignUpButton.setBackground(new java.awt.Color(0, 153, 255));
+        SignUpButton.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        SignUpButton.setText("Sign Up");
+        SignUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignUpActionPerformed(evt);
+                SignUpButtonActionPerformed(evt);
             }
         });
 
@@ -209,12 +191,6 @@ public class SignUpIn extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setToolTipText("");
-
-        jLabel6.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 14)); // NOI18N
-        jLabel6.setText("I read and Agree to Terms and Conditions");
-        jLabel6.setToolTipText("");
-
         javax.swing.GroupLayout SignupPanelLayout = new javax.swing.GroupLayout(SignupPanel);
         SignupPanel.setLayout(SignupPanelLayout);
         SignupPanelLayout.setHorizontalGroup(
@@ -222,32 +198,27 @@ public class SignUpIn extends javax.swing.JFrame {
             .addGroup(SignupPanelLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SignupPanelLayout.createSequentialGroup()
-                        .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel5)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignupPanelLayout.createSequentialGroup()
                             .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addGroup(SignupPanelLayout.createSequentialGroup()
-                                    .addComponent(jCheckBox1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel6))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignupPanelLayout.createSequentialGroup()
-                                    .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(UserN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(UEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(UPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(MemorableW))
-                                    .addGap(17, 17, 17)
-                                    .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(UserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(MemorableWord, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(UserEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(usertype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(33, 33, 33))))
-                        .addContainerGap(119, Short.MAX_VALUE))
+                                .addComponent(UserN, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(UEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(UPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MemorableW))
+                            .addGap(17, 17, 17)
+                            .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(PasswordSTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MemorableWordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EmailSTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(UserNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(usertype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addContainerGap(152, Short.MAX_VALUE))
+                        .addGroup(SignupPanelLayout.createSequentialGroup()
+                            .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(SignupPanelLayout.createSequentialGroup()
-                        .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SignUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16))))
@@ -261,34 +232,30 @@ public class SignUpIn extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(31, 31, 31)
                         .addComponent(UserN, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UserNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UEmail)
-                    .addComponent(UserEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EmailSTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(UPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PasswordSTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(MemorableW, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MemorableWord, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(MemorableWordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usertype, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(SignupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SignupPanelLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(SignupPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 67, Short.MAX_VALUE)
+                        .addComponent(SignUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17))
         );
 
@@ -297,30 +264,30 @@ public class SignUpIn extends javax.swing.JFrame {
 
         EmailLogi.setText("Email");
 
-        EmailL.setBackground(new java.awt.Color(247, 247, 247));
-        EmailL.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        EmailL.addActionListener(new java.awt.event.ActionListener() {
+        EmailLTextField.setBackground(new java.awt.Color(247, 247, 247));
+        EmailLTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        EmailLTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailLActionPerformed(evt);
+                EmailLTextFieldActionPerformed(evt);
             }
         });
 
         PasswordLogi.setText("Password");
 
-        PaswordLogin.setBackground(new java.awt.Color(247, 247, 247));
-        PaswordLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
-        PaswordLogin.addActionListener(new java.awt.event.ActionListener() {
+        PaswordLoginTextField.setBackground(new java.awt.Color(247, 247, 247));
+        PaswordLoginTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
+        PaswordLoginTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PaswordLoginActionPerformed(evt);
+                PaswordLoginTextFieldActionPerformed(evt);
             }
         });
 
-        Login.setBackground(new java.awt.Color(0, 153, 255));
-        Login.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        Login.setText("Log In");
-        Login.addActionListener(new java.awt.event.ActionListener() {
+        LoginButton.setBackground(new java.awt.Color(0, 153, 255));
+        LoginButton.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        LoginButton.setText("Log In");
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginActionPerformed(evt);
+                LoginButtonActionPerformed(evt);
             }
         });
 
@@ -352,7 +319,7 @@ public class SignUpIn extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(SigninPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SigninPanelLayout.createSequentialGroup()
-                        .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ClearLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -367,11 +334,11 @@ public class SignUpIn extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SigninPanelLayout.createSequentialGroup()
                                         .addComponent(EmailLogi, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(71, 71, 71)))
-                                .addComponent(EmailL, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(EmailLTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SigninPanelLayout.createSequentialGroup()
                                 .addComponent(PasswordLogi, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(PaswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(PaswordLoginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 38, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -381,15 +348,15 @@ public class SignUpIn extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(29, 29, 29)
                 .addGroup(SigninPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmailL, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EmailLTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EmailLogi, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(SigninPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PasswordLogi, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PaswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PaswordLoginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(SigninPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ForgotPass, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ClearLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -422,7 +389,7 @@ public class SignUpIn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SigninPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SignupPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -449,11 +416,6 @@ public class SignUpIn extends javax.swing.JFrame {
     private static final String ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private static final int ITERATIONS = 10000;
     private static final int KEY_LENGTH = 256;
-    
-    
-  
-    
-   
     
     public static String getSalt(int length) {
         StringBuilder returnValue = new StringBuilder(length);
@@ -491,7 +453,7 @@ public class SignUpIn extends javax.swing.JFrame {
     
     public  void ProtectUserPassword(){
         SignUpIn n = new SignUpIn();
-         String myPassword = UserPassword.getText();
+         String myPassword = PasswordSTextField.getText();
         
         // Generate Salt. The generated value can be stored in DB. 
         String salt = n.getSalt(30);
@@ -518,19 +480,14 @@ public class SignUpIn extends javax.swing.JFrame {
         return returnValue;
     }
 
-    
-    
-    
-    
-    
-    private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
+    private void UserNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UserNameActionPerformed
+    }//GEN-LAST:event_UserNameTextFieldActionPerformed
 
     
     
     /*---------------------------*/
-    private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
+    private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
         try {
             // Class.forName("com.mysql.jdbc.Driver");
             
@@ -540,20 +497,15 @@ public class SignUpIn extends javax.swing.JFrame {
             
             
             //Get the username and password
-            String Name =       UserName.getText();
-            String Email =      UserEmail.getText();
-            String Password =   UserPassword.getText();
-            String  Memorable = MemorableWord.getText();
+            String Name =       UserNameTextField.getText();
+            String Email =      EmailSTextField.getText();
+            String Password =   PasswordSTextField.getText();
+            String  Memorable = MemorableWordTextField.getText();
             
             String l = usertype.getSelectedItem().toString();
             SignUpIn n = new SignUpIn();
             
-            
-            
-            //    String salt = n.getSalt(30);
-            
-            //    mySecurePassword = SignUpIn.generateSecurePassword(plo, salt);
-            String mySecurePassword = n.generateSecurePassword(UserPassword.getText(), salt);
+            String mySecurePassword = n.generateSecurePassword(PasswordSTextField.getText(), salt);
             
             ResultSet userResultSet = UserTable.get(Email);
           
@@ -566,11 +518,17 @@ public class SignUpIn extends javax.swing.JFrame {
             if(verifySignupFields()==true)
             {
                 UserTable.insertSalt(Name, Email, l,Memorable, mySecurePassword,salt);
-                UserTable.insertUserSignUppActivity(Email, LocalD, randomID);
+                UserTable.insertUserSignUppActivity(Name,Email, LocalD, randomID);
                 
                 
                 JOptionPane.showMessageDialog(this, "You have been registered");
                 //st.executeUpdate();
+                 UserNameTextField.setText(" ");
+                 EmailSTextField.setText(" ");
+                 PasswordSTextField.setText("");
+                 MemorableWordTextField.setText(" ");
+             
+                
             }
             else{
                 JOptionPane.showMessageDialog(this, "Retry!!!");   
@@ -580,25 +538,26 @@ public class SignUpIn extends javax.swing.JFrame {
         }
    
                
-    }//GEN-LAST:event_SignUpActionPerformed
+    }//GEN-LAST:event_SignUpButtonActionPerformed
 
     
     
      private boolean verifySignupFields()
     {
-            String name = UserName.getText();
-            String email = UserEmail.getText();
-            String password = UserPassword.getText();
-            String  Memorable = MemorableWord.getText();
+            String name = UserNameTextField.getText();
+            String email = EmailSTextField.getText();
+            String password = PasswordSTextField.getText();
+            String  Memorable = MemorableWordTextField.getText();
             String l = usertype.getSelectedItem().toString();
 
-        //Check empty fields
+        //Check if fields are empty fields
         if((name.equals("")||email.equals("")||password.equals("") || l.equals("")))
          
         {
             JOptionPane.showMessageDialog(this, "Mandatory fields are empty Empty Fields");
             return false;
         }
+        //Check if fields are apropriate
              String emailRegex = "^(.+)@(.+)$";
             if (!email.matches(emailRegex)) {
                 JOptionPane.showMessageDialog(this,"Email is not in a valid format");
@@ -610,20 +569,17 @@ public class SignUpIn extends javax.swing.JFrame {
         }
     }
     
-    private void EmailLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailLActionPerformed
+    private void EmailLTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailLTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmailLActionPerformed
+    }//GEN-LAST:event_EmailLTextFieldActionPerformed
 
-    
-    
-    
-    
       private boolean verifyLoginFields()
     {
            
-            String email = EmailL.getText();
-            String password = PaswordLogin.getText();
+            String email = EmailLTextField.getText();
+            String password = PaswordLoginTextField.getText();
        
+            //Check if fields are empty fields
             if((email.equals("")||password.equals("")))
         {
             JOptionPane.showMessageDialog(this, "Mandatory fields are empty Empty Fields");
@@ -642,169 +598,151 @@ public class SignUpIn extends javax.swing.JFrame {
     
     
     
-    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
        try {
             //Get the username and password
-            String useremail = EmailL.getText();
-            String password = PaswordLogin.getText();
+            String useremail = EmailLTextField.getText();
+            String password = PaswordLoginTextField.getText();
             String user  =usertype.getSelectedItem().toString();
             
             
              Connection con = DB.getConnection();
-            Statement stat = null;
-            String email =  EmailL.getText();
-            String e = email.toString();
+             Statement stat = null;
+           
+            String logg = String.valueOf(logInTime);
             
-             String sqll = "Select * from User where UserEmail= '" + EmailL.getText() +"'";
-            
-            
+     
+          ResultSet userResultSet = UserTable.getloginemail(useremail);
+            String sqll = "Select * from User where UserEmail= '" + EmailLTextField.getText() +"'";
             Statement pstt = con.createStatement();
-           
-            
-            
             ResultSet rss = pstt.executeQuery(sqll);
-            salt = rss.getString("salt");
-            
-            mySecurePassword=rss.getString("UserPassword");
            
-            String sql = "Select * from User where UserEmail= '" + EmailL.getText() +"' and UserPassword = '" + mySecurePassword + "'";
-            // String sql =  "Select UserEmail,UserPassword, salt from User";
             
+            salt = rss.getString("salt");
+            mySecurePassword=rss.getString("UserPassword");
+           String sql = "Select * from User where UserEmail= '" + EmailLTextField.getText() +"' and UserPassword = '" + mySecurePassword + "'";
+         
             Statement pst = con.createStatement();
-            //pst.setString(EmailL.getText());
-            
-            
             ResultSet rs = pst.executeQuery(sql);
-            System.out.println("rs:" + rs.getString(1));
-            
-           // salt = rs.getString("salt");
-            
-          //  mySecurePassword=rs.getString("UserPassword");
+            System.out.println("rs:" + " " + rs.getString(1));
             
             SignUpIn n = new SignUpIn();
-            
-          //  boolean passwordMatch = n.VerifyPassword(PaswordLogin.getText());
-            
-          String s = rss.getString("UserType");
-            
-            if (rs.next())  {
-                //Progress to HomePage form
+            String s = rss.getString("UserType");
                 
+           String log = String.valueOf(logInTime);
+         if (rs.next())  {
+             pstt.close();
+             
+             rs.close();
+             if(userResultSet.next()){
                 
-                //JOptionPane.showMessageDialog(this," ct");
-               
-                //if (n.VerifyPassword(PaswordLogin.getText())){
-                if(verifyLoginFields()==true){
-                    if(!n.verifyUserPassword(PaswordLogin.getText(),mySecurePassword,salt)){
+                 UserTable.insertULogin(EmailLTextField.getText(), log);
+              userResultSet.close();
+                  
+              if(verifyLoginFields()==true){
+                    //Check if password is correct
+                    if(!n.verifyUserPassword(PaswordLoginTextField.getText(),mySecurePassword,salt)){
                         JOptionPane.showMessageDialog(this,"wrong pass"); 
                         
                         } else {
                         if(!s.equalsIgnoreCase("User")){
-                            
+                          
+                           //Check if the user is an admin or a normal user //this determines what form they progress to
                             //Progress to HomePage form
                             Adminpanel1 panel = new Adminpanel1();
                             panel.setVisible(true);
                             this.setVisible(false);
-                            JOptionPane.showMessageDialog(this," welcome to admin panel" + useremail);
-                            
+                            JOptionPane.showMessageDialog(this," welcome to admin panel" +  " " + useremail);
                             //Close Login form
                             this.dispose();
                         }
                         else {
-                            Dash1 d = new Dash1();
+                            //if the user is not admin they go straight to dashboard 1 to view
+                            
+                            Dashboard3 d = new Dashboard3();
                             d.setVisible(true);
                             this.setVisible(false);
                             JOptionPane.showMessageDialog(this,"welcome to dashboard 1" + useremail);
                             this.dispose();
                         }
                     }
-                }
-                else
-                {
-                    //Error message
-                    JOptionPane.showMessageDialog(this, "Invalid username/password","Login Error",2);
-                }
-            }
+              }
+         }
+             else
+             {
+//Error message
+                 JOptionPane.showMessageDialog(this, "Invalid username/password","Login Error",2);
+             }
+           }
+           con.close();
         } catch (SQLException ex) {
             //Logger.getLogger(SignUpIn.class.getName()).log(Level.SEVERE, null, ex);
              JOptionPane.showMessageDialog(this,"login error");
-        }
-           
-    }//GEN-LAST:event_LoginActionPerformed
+        }     
+    }//GEN-LAST:event_LoginButtonActionPerformed
 
     
     public boolean VerifyPassword(String providedpass) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, UnsupportedEncodingException, InvalidAlgorithmParameterException, BadPaddingException, IOException 
     {
-        
-          
-            boolean passwordMatch = SignUpIn.verifyUserPassword(providedpass, mySecurePassword, salt);
+        //This method verifiys the passsword by checking if the passwords match with password in the database
+        boolean passwordMatch = SignUpIn.verifyUserPassword(providedpass, mySecurePassword, salt);
              if(passwordMatch) 
             {
-               
                 return true;
             } 
-             
              else 
              {
-                  return false;  
-             
+                 return false;  
              }
-        }
-      
+    }
     
-    private void PaswordLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaswordLoginActionPerformed
+    private void PaswordLoginTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaswordLoginTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PaswordLoginActionPerformed
+    }//GEN-LAST:event_PaswordLoginTextFieldActionPerformed
 
-    private void UserEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserEmailActionPerformed
+    private void EmailSTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailSTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UserEmailActionPerformed
+    }//GEN-LAST:event_EmailSTextFieldActionPerformed
 
-    private void MemorableWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemorableWordActionPerformed
+    private void MemorableWordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemorableWordTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MemorableWordActionPerformed
+    }//GEN-LAST:event_MemorableWordTextFieldActionPerformed
 
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
-       
-         UserName.setText(" ");
-         UserEmail.setText(" ");
-         UserPassword.setText("");
-         MemorableWord.setText(" ");
+       //method clears the  sign up fields
+         UserNameTextField.setText(" ");
+         EmailSTextField.setText(" ");
+         PasswordSTextField.setText("");
+         MemorableWordTextField.setText(" ");
     }//GEN-LAST:event_ClearActionPerformed
 
     private void ClearLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearLoginActionPerformed
-       EmailL.setText(" ");
-       PaswordLogin.setText("");
+       //Clears login fields
+        EmailLTextField.setText(" ");
+       PaswordLoginTextField.setText("");
     }//GEN-LAST:event_ClearLoginActionPerformed
 
     private void usertypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usertypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usertypeActionPerformed
 
-    private void UserPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserPasswordActionPerformed
+    private void PasswordSTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordSTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UserPasswordActionPerformed
+    }//GEN-LAST:event_PasswordSTextFieldActionPerformed
 
     private void ForgotPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgotPassActionPerformed
  
-         try {
-             String useremail = EmailL.getText();
+         //return users memorable word from database
+        try {
+             String useremail = EmailLTextField.getText();
             Connection con = DB.getConnection();
              Statement stat = null;
              
-             String sqll = "Select * from User where UserEmail= '" + EmailL.getText() +"'";
+             String sqll = "Select * from User where UserEmail= '" + EmailLTextField.getText() +"'";
              Statement pstt = con.createStatement();
-             
-             ResultSet rss = pstt.executeQuery(sqll);
+              ResultSet rss = pstt.executeQuery(sqll);
              String m = rss.getString("UserMemorable");
-             
-             
-                  
-             
              JOptionPane.showMessageDialog(this,"Memorable word is:" + " " +  m); 
-              
-            
-             
              
          } catch (SQLException ex) {
              Logger.getLogger(SignUpIn.class.getName()).log(Level.SEVERE, null, ex);
@@ -856,28 +794,26 @@ public class SignUpIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Clear;
     private javax.swing.JButton ClearLogin;
-    private javax.swing.JTextField EmailL;
+    private javax.swing.JTextField EmailLTextField;
     private javax.swing.JLabel EmailLogi;
+    private javax.swing.JTextField EmailSTextField;
     private javax.swing.JButton ForgotPass;
-    private javax.swing.JButton Login;
+    private javax.swing.JButton LoginButton;
     private javax.swing.JLabel MemorableW;
-    private javax.swing.JTextField MemorableWord;
+    private javax.swing.JTextField MemorableWordTextField;
     private javax.swing.JLabel PasswordLogi;
-    private javax.swing.JPasswordField PaswordLogin;
-    private javax.swing.JButton SignUp;
+    private javax.swing.JPasswordField PasswordSTextField;
+    private javax.swing.JPasswordField PaswordLoginTextField;
+    private javax.swing.JButton SignUpButton;
     private javax.swing.JPanel SigninPanel;
     private javax.swing.JPanel SignupPanel;
     private javax.swing.JLabel UEmail;
     private javax.swing.JLabel UPassword;
-    private javax.swing.JTextField UserEmail;
     private javax.swing.JLabel UserN;
-    private javax.swing.JTextField UserName;
-    private javax.swing.JPasswordField UserPassword;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JTextField UserNameTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel user;
     private javax.swing.JComboBox<String> usertype;
@@ -885,14 +821,6 @@ public class SignUpIn extends javax.swing.JFrame {
 
  
   
-  public JTextField getUserName() {
-       return UserName; 
-    }
-  
-  
-  public JTextField getPassword() {
-       return UserPassword; 
-    }
-    
+ 
     
 }
