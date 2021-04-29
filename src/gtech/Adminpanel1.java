@@ -54,9 +54,9 @@ public class Adminpanel1 extends javax.swing.JFrame {
         whitebackG = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        D1 = new javax.swing.JButton();
+        D2 = new javax.swing.JButton();
+        D3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         LogOut = new javax.swing.JButton();
@@ -136,17 +136,27 @@ public class Adminpanel1 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(247, 247, 247));
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 255));
-        jButton1.setText("Dashboard 1");
-
-        jButton2.setBackground(new java.awt.Color(51, 153, 255));
-        jButton2.setText("Dashboard 2");
-
-        jButton3.setBackground(new java.awt.Color(51, 153, 255));
-        jButton3.setText("Dashboard 3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        D1.setBackground(new java.awt.Color(51, 153, 255));
+        D1.setText("Dashboard 1");
+        D1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                D1ActionPerformed(evt);
+            }
+        });
+
+        D2.setBackground(new java.awt.Color(51, 153, 255));
+        D2.setText("Dashboard 2");
+        D2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D2ActionPerformed(evt);
+            }
+        });
+
+        D3.setBackground(new java.awt.Color(51, 153, 255));
+        D3.setText("Dashboard 3");
+        D3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                D3ActionPerformed(evt);
             }
         });
 
@@ -157,20 +167,20 @@ public class Adminpanel1 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67))
         );
 
@@ -458,9 +468,10 @@ public class Adminpanel1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void D3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D3ActionPerformed
+      Dashboard3 d = new Dashboard3();
+      d.setVisible(true);
+    }//GEN-LAST:event_D3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         showTable();
@@ -618,6 +629,20 @@ public class Adminpanel1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
+        // TODO add your handling code here:
+        
+        DASHBOARD1 D1 = new DASHBOARD1();
+        D1.setVisible(true);
+        
+    }//GEN-LAST:event_D1ActionPerformed
+
+    private void D2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D2ActionPerformed
+      
+         DASHBOARD2 D2 = new DASHBOARD2();
+        D2.setVisible(true);
+    }//GEN-LAST:event_D2ActionPerformed
+
     
     public void showTable() {
 
@@ -735,6 +760,9 @@ public class Adminpanel1 extends javax.swing.JFrame {
         
             
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton D1;
+    private javax.swing.JButton D2;
+    private javax.swing.JButton D3;
     private javax.swing.JButton Delete;
     private javax.swing.JButton Insert;
     private javax.swing.JButton LogOut;
@@ -744,9 +772,6 @@ public class Adminpanel1 extends javax.swing.JFrame {
     private javax.swing.JTextField email;
     private javax.swing.JTextField id;
     private javax.swing.JLabel idn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;

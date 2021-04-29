@@ -49,9 +49,9 @@ public class Dashboard3 extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         whitebackG = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        D1 = new javax.swing.JButton();
+        D2 = new javax.swing.JButton();
+        D3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         pnlReport = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -89,27 +89,27 @@ public class Dashboard3 extends javax.swing.JFrame {
         whitebackG.setBackground(new java.awt.Color(255, 255, 255));
         whitebackG.setToolTipText("");
 
-        jButton1.setBackground(new java.awt.Color(51, 153, 255));
-        jButton1.setText("Dashboard 1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        D1.setBackground(new java.awt.Color(51, 153, 255));
+        D1.setText("Dashboard 1");
+        D1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                D1ActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(51, 153, 255));
-        jButton2.setText("Dashboard 2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        D2.setBackground(new java.awt.Color(51, 153, 255));
+        D2.setText("Dashboard 2");
+        D2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                D2ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(51, 153, 255));
-        jButton3.setText("Dashboard 3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        D3.setBackground(new java.awt.Color(51, 153, 255));
+        D3.setText("Dashboard 3");
+        D3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                D3ActionPerformed(evt);
             }
         });
 
@@ -171,11 +171,11 @@ public class Dashboard3 extends javax.swing.JFrame {
                     .addGroup(whitebackGLayout.createSequentialGroup()
                         .addGroup(whitebackGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(whitebackGLayout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(78, 78, 78)
                                 .addComponent(pnlReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(whitebackGLayout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -210,11 +210,11 @@ public class Dashboard3 extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(whitebackGLayout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(D1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(D2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(D3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(50, 50, 50)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
@@ -249,16 +249,20 @@ public class Dashboard3 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void D3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D3ActionPerformed
         // TODO add your handling code here:
+        
         pnlReport.updateUI();
-    }//GEN-LAST:event_jButton3ActionPerformed
+         DASHBOARD1 D1 = new DASHBOARD1();
+        D1.setVisible(true);
+        
+    }//GEN-LAST:event_D3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        //Dashboard1 d2 = new Dashboard();
-        //d2.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void D2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D2ActionPerformed
+         DASHBOARD2 D2 = new DASHBOARD2();
+        D2.setVisible(true);
+        
+    }//GEN-LAST:event_D2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -344,11 +348,11 @@ public class Dashboard3 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        //Dashboard1 d1 = new Dashboard();
-        //d1.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void D1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D1ActionPerformed
+         DASHBOARD1 D1 = new DASHBOARD1();
+        D1.setVisible(true);
+        
+    }//GEN-LAST:event_D1ActionPerformed
 
     private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
 
@@ -403,10 +407,10 @@ public class Dashboard3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton D1;
+    private javax.swing.JButton D2;
+    private javax.swing.JButton D3;
     private javax.swing.JButton LogOut;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JFrame jFrame1;

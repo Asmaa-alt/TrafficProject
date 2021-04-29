@@ -257,9 +257,9 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton1" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
-                                  <Component id="jButton2" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
-                                  <Component id="jButton3" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
+                                  <Component id="D1" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
+                                  <Component id="D2" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
+                                  <Component id="D3" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="42" max="32767" attributes="0"/>
                           </Group>
@@ -269,34 +269,40 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="D1" min="-2" pref="69" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="D2" min="-2" pref="69" max="-2" attributes="0"/>
                               <EmptySpace pref="69" max="32767" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="D3" min="-2" pref="69" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JButton" name="jButton1">
+                    <Component class="javax.swing.JButton" name="D1">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="99" red="33" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Dashboard 1"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="D1ActionPerformed"/>
+                      </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton2">
+                    <Component class="javax.swing.JButton" name="D2">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="99" red="33" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Dashboard 2"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="D2ActionPerformed"/>
+                      </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton3">
+                    <Component class="javax.swing.JButton" name="D3">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="99" red="33" type="rgb"/>
@@ -304,7 +310,7 @@
                         <Property name="text" type="java.lang.String" value="Dashboard 3"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="D3ActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
