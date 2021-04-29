@@ -659,8 +659,8 @@ public class SignUpIn extends javax.swing.JFrame {
                         else {
                             //if the user is not admin they go straight to dashboard 1 to view
                             
-                            Dashboard3 d = new Dashboard3();
-                            d.setVisible(true);
+                            //Dashboard3 d = new Dashboard3();
+                            //d.setVisible(true);
                             this.setVisible(false);
                             JOptionPane.showMessageDialog(this,"welcome to dashboard 1" + useremail);
                             this.dispose();
