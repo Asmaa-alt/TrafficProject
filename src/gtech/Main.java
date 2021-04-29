@@ -15,7 +15,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    //    DB.getConnection();
+    DB.getConnection();
+    SignUpIn sign=new SignUpIn();
+    sign.setVisible(true);
       
     
     

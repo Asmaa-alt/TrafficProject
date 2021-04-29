@@ -65,9 +65,7 @@ public class SignUpIn extends javax.swing.JFrame {
        return EmailLTextField; 
     }
      
-    public String getEmailL() {
-       return s; 
-    }
+    
     
      
     LocalDate LocalD = LocalDate.now();
@@ -612,7 +610,7 @@ public class SignUpIn extends javax.swing.JFrame {
             String logg = String.valueOf(logInTime);
             
      
-          ResultSet userResultSet = UserTable.getloginemail(useremail);
+            ResultSet userResultSet = UserTable.getloginemail(useremail);
             String sqll = "Select * from User where UserEmail= '" + EmailLTextField.getText() +"'";
             Statement pstt = con.createStatement();
             ResultSet rss = pstt.executeQuery(sqll);
@@ -659,9 +657,9 @@ public class SignUpIn extends javax.swing.JFrame {
                         else {
                             //if the user is not admin they go straight to dashboard 1 to view
                             
-                            //Dashboard3 d = new Dashboard3();
-                            //d.setVisible(true);
-                            this.setVisible(false);
+                           Dashboard3 d = new Dashboard3();
+                           d.setVisible(true);
+                           this.setVisible(false);
                             JOptionPane.showMessageDialog(this,"welcome to dashboard 1" + useremail);
                             this.dispose();
                         }

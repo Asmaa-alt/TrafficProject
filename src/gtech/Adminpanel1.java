@@ -367,9 +367,9 @@ public class Adminpanel1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, whitebackGLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 895, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107)
+                .addGap(80, 80, 80)
                 .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(56, 56, 56))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, whitebackGLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -388,11 +388,11 @@ public class Adminpanel1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, whitebackGLayout.createSequentialGroup()
                 .addGroup(whitebackGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(whitebackGLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(whitebackGLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(whitebackGLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(LogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(whitebackGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(whitebackGLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -459,7 +459,7 @@ public class Adminpanel1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -477,14 +477,12 @@ public class Adminpanel1 extends javax.swing.JFrame {
      
         LocalTime logOutTime = LocalTime.now();
         UserTable.insertUserLogoutActivity(e,s.LocalD,s.randomID,s.logInTime,logOutTime); 
-        
-        
-              
          
         SignUpIn p = new SignUpIn();
                 p.setVisible(true);
                 this.setVisible(false);
                 this.dispose();
+              
     }//GEN-LAST:event_LogOutActionPerformed
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
@@ -543,7 +541,7 @@ public class Adminpanel1 extends javax.swing.JFrame {
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         // TODO add your handling code here:
         
-        /*  DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
+          DefaultTableModel tm = (DefaultTableModel) jTable1.getModel();
           if(jTable1.getSelectedRowCount()==1){
               //if single row is selected then delete
               tm.removeRow(jTable1.getSelectedRow());
@@ -555,46 +553,13 @@ public class Adminpanel1 extends javax.swing.JFrame {
               } else{
                   JOptionPane.showMessageDialog(this,"please select single row");
               }
+                showTable();
+         
               
           }
         
-        */
-        
-        
-        
-        try {
-            
-            Connection cn =  DriverManager.getConnection("jdbc:sqlite:GtechUser.db");
-           // Connection cn = null;
-           // PreparedStatement st = null;
-            ResultSet rs = null;
-            
-            String sql = ("DELETE FROM UserActivity where ID=?");
-                    
-         PreparedStatement  st = cn.prepareStatement(sql);
-            st.setString(1, name.getText());
-            st.setString(2, email.getText());
-            st.setString(3, id.getText());
-            st.setString(4, date.getText());
-            
-              st.setString(5, login.getText());
-              st.setString(6, logout.getText());
-              
-              st.executeUpdate();
-              JOptionPane.showMessageDialog(this,"insertion successfull");
-              cn.close();
-              
-            
-            
-        } catch (SQLException ex) {
-           // Logger.getLogger(Adminpanel1.class.getName()).log(Level.SEVERE, null, ex);
-             JOptionPane.showMessageDialog(this,ex);
-             
-             
-        }
-        
-    showTable();
-         
+       
+  
         
         
     }//GEN-LAST:event_DeleteActionPerformed
@@ -764,69 +729,9 @@ public class Adminpanel1 extends javax.swing.JFrame {
    
     
     
-   public void addtable() {
+   
        
-       /*
-        // TODO add your handling code here:
-        int row = jTable1.getSelectedRow();
-
-        System.out.println("row clicked : " + row);
-        String tc = jTable1.getModel().getValueAt(row, 0).toString();
-        int tc_id = Integer.parseInt((String) jTable1.getModel().getValueAt(row, 0));
-        int id1 = Integer.valueOf((String) jTable1.getModel().getValueAt(row, 0));
-        System.out.println("tc_id: " + tc_id + " id1 " + id1);
-        System.out.println("data at clicked row: " + tc);
-        Connection con = DB.getConnection();
-        Statement stmt = null;//con.createStatement();
-        ResultSet rs = null;
-        try {
-
-            //String sql1 = "select * from employee where empID=" + tc + "";
-            //String sql1 = "select * from employee where empID=" + tc + "";
-            String sql = "select * from UserActivity";
-            System.out.println("sql string for table row data :" + sql);
-            stmt = con.createStatement();
-            rs = stmt.executeQuery(sql);
-
-            if (rs.next()) {
-
-                String Email = rs.getString("UserEmail");
-                String  Id = String.valueOf(rs.getString("ID"));
-                String date = String.valueOf(rs.getString("DateJoined"));
-                
-
-                System.out.println("row data :" + Email + " " + Id + " " + Id + " " + date);
-
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e);
-
-        } finally {
-
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-            try {
-                stmt.close();
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-            try {
-                con.close();
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, e);
-            }
-
-        }
-
-
-    }           
-       */
-       
-   } 
+    
         
             
     // Variables declaration - do not modify//GEN-BEGIN:variables
